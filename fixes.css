@@ -29,3 +29,5 @@
 .loader{overflow:hidden}
 .loader__rank{font-size:clamp(110px,21vw,250px)}
 @media(max-width:760px){.sec-head{margin-bottom:44px}.sec-sub{margin-top:20px}.wall{gap:16px}.svc-grid,.ins-grid{gap:16px}}
+.console__chart-head p.mono{max-width:none;width:100%;flex:1 1 100%}
+.console__chart-head p.mono.dim{margin-bottom:4px}
