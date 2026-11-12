@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdullah Shehrayar — App Store Optimization (ASO) &amp; App Growth Expert</title>
+<meta name="description" content="Sr. ASO &amp; UAC growth partner for mobile app founders. 100+ apps scaled to $5K–$1M+/month since 2021. See real case studies, rankings and client reviews.">
+<meta name="theme-color" content="#07090a">
+<meta property="og:title" content="Abdullah Shehrayar × BoostMyApp — ASO &amp; App Growth">
+<meta property="og:description" content="I take the stress out of app growth. Real ASO case studies: 16→120, 100→1,000 and 4→3,000+ daily downloads.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<noscript><style>.loader{display:none}[data-reveal]{opacity:1;transform:none}.line>span{transform:none}</style></noscript>
+</head>
+<body>
+
+<!-- Intro / preloader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <button class="loader__skip" id="loaderSkip" type="button">Skip intro →</button>
+  <div class="loader__inner">
+    <p class="mono loader__label">Keyword · “your app here”</p>
+    <div class="loader__rank"><span class="loader__hash">#</span><span id="loaderNum">78</span></div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <p class="mono loader__sub">Climbing the charts…</p>
+  </div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- Header -->
+<header class="header" id="header">
+  <a class="brand" href="#top" aria-label="Abdullah Shehrayar — home">
+    <span class="brand__mark">AS</span>
+    <span class="brand__text">Abdullah <em>×</em> BoostMyApp</span>
+  </a>
+  <nav class="pill" aria-label="Primary">
+    <a href="#work" data-nav>Work</a>
+    <a href="#services" data-nav>Services</a>
+    <a href="#reviews" data-nav>Reviews</a>
+    <a href="#about" data-nav>About</a>
+  </nav>
+  <div class="header__right">
+    <a class="btn btn--sm btn--lime hide-sm" href="#contact">Free ASO audit</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Fullscreen menu -->
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__nav">
+    <a href="#top"><i class="mono">01</i>Home</a>
+    <a href="#work"><i class="mono">02</i>Work</a>
+    <a href="#services"><i class="mono">03</i>Services</a>
+    <a href="#reviews"><i class="mono">04</i>Reviews</a>
+    <a href="#about"><i class="mono">05</i>About</a>
+    <a href="#contact"><i class="mono">06</i>Contact</a>
+  </nav>
+  <div class="menu__foot mono">
+    <span>Abdullah Shehrayar — Sr. ASO &amp; UAC Growth Partner</span>
+    <a href="https://www.linkedin.com/in/abdullah-shehrayar" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <div class="chips" data-reveal>
+        <span class="tag tag--live"><i></i>Available for ASO projects</span>
+        <span class="tag">Sr. ASO &amp; UAC Growth Partner</span>
+      </div>
+      <h1 class="display hero__title" data-split>
+        <span class="line"><span>I take the</span></span>
+        <span class="line"><span>stress out of</span></span>
+        <span class="line accent"><span>app growth.</span></span>
+      </h1>
+      <p class="lead" data-reveal>
+        I turn struggling apps into monthly money-making machines. <strong>100+ apps scaled to $5K–$1M+/month since 2021</strong> through keyword strategy, store-listing CRO and smart user acquisition.
+      </p>
+      <div class="hero__cta" data-reveal>
+        <a class="btn btn--lime magnetic" href="#contact">Get a free ASO audit <span class="arr">→</span></a>
+        <a class="btn btn--ghost magnetic" href="#work">See the case studies</a>
+      </div>
+      <div class="hero__trust" data-reveal>
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p><strong>5.0</strong> across 6 verified LinkedIn client reviews · Remote-first, working worldwide</p>
+      </div>
+    </div>
+
+    <!-- Ranking console -->
+    <aside class="console tilt" data-reveal aria-label="Live ASO results preview">
+      <div class="console__bar">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="mono">aso-console · live results</span>
+      </div>
+      <div class="console__body">
+        <div class="console__kw">
+          <p class="mono dim">Keyword rank (US)</p>
+          <ul id="rankList">
+            <li><span>“ai essay writer”</span><b data-from="78" data-to="2">#78</b></li>
+            <li><span>“screen mirroring”</span><b data-from="239" data-to="9">#239</b></li>
+            <li><span>“miracast”</span><b data-from="93" data-to="3">#93</b></li>
+            <li><span>“all smart tv remote”</span><b data-from="68" data-to="8">#68</b></li>
+          </ul>
+        </div>
+        <div class="console__chart">
+          <div class="console__chart-head">
+            <p class="mono dim">Daily downloads · Screen Mirroring app</p>
+            <p class="big"><span id="dlNum">4</span><small>/day</small></p>
+          </div>
+          <div class="bars" id="bars" aria-hidden="true"></div>
+        </div>
+        <div class="console__foot">
+          <div><p class="mono dim">Revenue</p><p class="mid">$0 → <b>$1,000</b>/mo</p></div>
+          <div><p class="mono dim">Rating</p><p class="mid">3.4 → <b>4.5★</b></p></div>
+        </div>
+      </div>
+      <div class="float float--a"><span class="dotlive"></span> 70% organic</div>
+      <div class="float float--b">+8.9K ratings</div>
+    </aside>
+  </div>
+  <div class="scroll-hint mono" aria-hidden="true"><span></span>Scroll</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marquee">
+    <span>App Store Optimization</span><i>✦</i>
+    <span class="o">Google Play</span><i>✦</i>
+    <span>Keyword Research</span><i>✦</i>
+    <span class="o">UAC Campaigns</span><i>✦</i>
+    <span>A/B Testing</span><i>✦</i>
+    <span class="o">Localization</span><i>✦</i>
+    <span>Screenshot CRO</span><i>✦</i>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap stats__grid">
+    <div class="stat" data-reveal>
+      <p class="stat__n"><span data-count="100" data-suffix="+">0</span></p>
+      <p class="stat__l">Apps &amp; games scaled</p>
+    </div>
+    <div class="stat" data-reveal>
+      <p class="stat__n">$<span data-count="5" data-suffix="K">0</span>–$<span data-count="1" data-suffix="M+">0</span></p>
+      <p class="stat__l">Monthly revenue range reached</p>
+    </div>
+    <div class="stat" data-reveal>
+      <p class="stat__n"><span data-count="6000" data-suffix="+" data-comma="1">0</span></p>
+      <p class="stat__l">Installs/day for one client’s racing game</p>
+    </div>
+    <div class="stat" data-reveal>
+      <p class="stat__n">5.0<small>★</small></p>
+      <p class="stat__l">Average client rating</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / CASE STUDIES -->
+<section class="section work" id="work">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow"><span></span>Selected case studies</p>
+      <h2 class="display h2">Real apps.<br><span class="accent">Real numbers.</span></h2>
+      <p class="sec-sub">Every result below comes straight from store consoles and rank trackers, not mock-ups. Pick a project to see the before/after and the playbook behind it.</p>
+    </div>
+
+    <div class="cases" data-reveal>
+      <ul class="cases__list" id="caseList" role="tablist" aria-label="Case studies"></ul>
+      <article class="cases__panel" id="casePanel" aria-live="polite"></article>
+    </div>
+
+    <div class="more-wins" data-reveal>
+      <p class="mono dim">More client wins</p>
+      <div class="more-wins__grid">
+        <div class="win">
+          <p class="win__n">1.5M+</p>
+          <p class="win__t">Installs in one month</p>
+          <p class="win__d">Bike racing game revived on Google Play, reaching 6,000+ installs a day.</p>
+        </div>
+        <div class="win">
+          <p class="win__n">~400</p>
+          <p class="win__t">Downloads a day</p>
+          <p class="win__d">Action game ASO (<em>Spider Fighter Man: Hero War</em>) that drove 1,500–2,000 daily store visits, then repeated on a second title.</p>
+          <img class="appicon appicon--win" src="https://play-lh.googleusercontent.com/58daIOyUkqmznnEQfvqv2nZxp5HbnWtoi-xw66yrGg8RJkal0ZWHmRe7TQ496PYo5MKjDwtcFeDjB5TOZfJosj4=w128-h128-rw" alt="Spider Fighter Man: Hero War app icon" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+        </div>
+        <div class="win">
+          <p class="win__n">2×</p>
+          <p class="win__t">Clients who came back</p>
+          <p class="win__d">The same game studio hired me again for a second title, and Karma brought me in on a portfolio app.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow"><span></span>What I do</p>
+      <h2 class="display h2">Growth that<br><span class="accent">compounds.</span></h2>
+    </div>
+    <div class="svc-grid">
+      <article class="svc tilt" data-reveal>
+        <span class="svc__n mono">01</span>
+        <h3>App Store Optimization</h3>
+        <p>Keyword research, title, subtitle and description strategy for Google Play and the App Store, built to rank for terms that actually convert.</p>
+        <ul><li>Keyword &amp; competitor research</li><li>Metadata optimization</li><li>Rank tracking &amp; reporting</li></ul>
+      </article>
+      <article class="svc tilt" data-reveal>
+        <span class="svc__n mono">02</span>
+        <h3>Screenshots &amp; Creatives</h3>
+        <p>Conversion-focused screenshots, icons and feature graphics. Because your store page is your first sales pitch.</p>
+        <ul><li>Screenshot sets that sell</li><li>Icon &amp; feature graphic tests</li><li>New-device-ready assets</li></ul>
+      </article>
+      <article class="svc tilt" data-reveal>
+        <span class="svc__n mono">03</span>
+        <h3>Localization &amp; Country ASO</h3>
+        <p>Country-by-country keyword research, localized listings and custom store listings to unlock markets you aren’t winning yet.</p>
+        <ul><li>Top-market discovery</li><li>Custom store listings</li><li>Localized metadata &amp; visuals</li></ul>
+      </article>
+      <article class="svc tilt" data-reveal>
+        <span class="svc__n mono">04</span>
+        <h3>A/B Testing &amp; CRO</h3>
+        <p>Store-listing experiments on icons, screenshots and descriptions, so every change is proven by data, not guesswork.</p>
+        <ul><li>Store listing experiments</li><li>Hypothesis &amp; test roadmap</li><li>Winner roll-out</li></ul>
+      </article>
+      <article class="svc tilt" data-reveal>
+        <span class="svc__n mono">05</span>
+        <h3>UAC &amp; User Acquisition</h3>
+        <p>Google App Campaigns layered on top of a listing that already converts, so paid traffic amplifies growth instead of burning budget.</p>
+        <ul><li>Campaign setup &amp; bidding</li><li>Budget optimization</li><li>ASO-first sequencing</li></ul>
+      </article>
+      <article class="svc tilt" data-reveal>
+        <span class="svc__n mono">06</span>
+        <h3>Reviews &amp; Retention Strategy</h3>
+        <p>Onboarding and in-flow review prompts that lift ratings and review velocity, a hidden ranking and conversion lever.</p>
+        <ul><li>Review-prompt flows</li><li>Rating recovery plans</li><li>Feature gap analysis</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process" id="process">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow"><span></span>How we work</p>
+      <h2 class="display h2">A playbook,<br><span class="accent">not guesswork.</span></h2>
+    </div>
+    <ol class="steps">
+      <li data-reveal><span class="mono">01</span><h3>Audit</h3><p>Deep-dive into your listing, rankings, competitors and store-console data.</p></li>
+      <li data-reveal><span class="mono">02</span><h3>Research</h3><p>Keyword and country research to find winnable terms and markets.</p></li>
+      <li data-reveal><span class="mono">03</span><h3>Optimize</h3><p>Metadata, creatives and localized listings go live in planned phases.</p></li>
+      <li data-reveal><span class="mono">04</span><h3>Test</h3><p>A/B experiments validate what converts before we scale it.</p></li>
+      <li data-reveal><span class="mono">05</span><h3>Scale</h3><p>Layer paid UAC on a proven listing and keep compounding organic.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head sec-head--row" data-reveal>
+      <div>
+        <p class="eyebrow"><span></span>Client reviews</p>
+        <h2 class="display h2">Don’t take<br><span class="accent">my word for it.</span></h2>
+      </div>
+      <div class="rating-card">
+        <p class="rating-card__n">5.0</p>
+        <div><div class="stars">★★★★★</div><p class="mono dim">6 reviews on LinkedIn Services</p></div>
+      </div>
+    </div>
+    <div class="rev-controls" data-reveal>
+      <button class="round" id="revPrev" aria-label="Previous review">←</button>
+      <button class="round" id="revNext" aria-label="Next review">→</button>
+    </div>
+  </div>
+  <div class="rev-track" id="revTrack" tabindex="0" aria-label="Client reviews"></div>
+  <div class="wrap">
+    <p class="rev-note mono dim" data-reveal>Reviews are published on <a href="https://www.linkedin.com/in/abdullah-shehrayar" target="_blank" rel="noopener">my LinkedIn Services page ↗</a></p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section about" id="about">
+  <div class="wrap about__grid">
+    <div class="about__left">
+      <div class="portrait" data-reveal>
+        <div class="portrait__ring"></div>
+        <div class="portrait__mono">AS</div>
+        <span class="portrait__tag mono">Sr. ASO · UAC</span>
+      </div>
+    </div>
+    <div class="about__right">
+      <div data-reveal>
+        <p class="eyebrow"><span></span>About me</p>
+        <h2 class="display h2">Hi, I’m <span class="accent">Abdullah.</span></h2>
+        <p class="lead">I’m an App Store Optimization and mobile app marketing specialist from Punjab, Pakistan. I’ve been scaling apps since 2021, with 3+ years focused purely on ASO and 6+ years across digital marketing. My approach: fix and prove organic first, then layer paid on top.</p>
+        <p class="lead">I care about hard work, honest communication and results you can verify in your own console.</p>
+      </div>
+      <div class="timeline" data-reveal>
+        <p class="mono dim">Experience</p>
+        <ul>
+          <li><span class="mono">May 2026 — Now</span><div><h4>ASO Expert</h4><p>Dev House · Faisalabad</p></div></li>
+          <li><span class="mono">Aug 2024 — Jan 2026</span><div><h4>ASO Manager (iOS)</h4><p>GameBit Square</p></div></li>
+          <li><span class="mono">Aug — Nov 2024</span><div><h4>ASO Manager (iOS &amp; Android)</h4><p>A2SV · Africa to Silicon Valley</p></div></li>
+          <li><span class="mono">Sep — Oct 2024</span><div><h4>ASO Manager · Contract</h4><p>Karma</p></div></li>
+          <li><span class="mono">Jul 2023 — Nov 2024</span><div><h4>Mobile App Marketing &amp; ASO</h4><p>TestSolz</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="section insights">
+  <div class="wrap">
+    <div class="sec-head sec-head--row" data-reveal>
+      <div>
+        <p class="eyebrow"><span></span>From my feed</p>
+        <h2 class="display h2">Staying ahead of<br><span class="accent">every update.</span></h2>
+      </div>
+      <a class="btn btn--ghost" href="https://www.linkedin.com/in/abdullah-shehrayar/recent-activity/all/" target="_blank" rel="noopener">Follow on LinkedIn ↗</a>
+    </div>
+    <div class="ins-grid">
+      <a class="ins" data-reveal href="https://www.linkedin.com/in/abdullah-shehrayar/recent-activity/all/" target="_blank" rel="noopener">
+        <span class="mono dim">App Store · Algorithm</span>
+        <h3>When Apple reshuffles 500 keywords overnight, don’t overreact.</h3>
+        <p>My playbook for ranking volatility: wait, monitor, analyze, and watch installs, not hourly positions.</p>
+        <span class="ins__more">Read on LinkedIn ↗</span>
+      </a>
+      <a class="ins" data-reveal href="https://www.linkedin.com/in/abdullah-shehrayar/recent-activity/all/" target="_blank" rel="noopener">
+        <span class="mono dim">Google Play · Reviews</span>
+        <h3>Users now search inside reviews. Reviews are part of your keyword ecosystem.</h3>
+        <p>Why phrase-level review content shapes discovery and conversion on Google Play.</p>
+        <span class="ins__more">Read on LinkedIn ↗</span>
+      </a>
+      <a class="ins" data-reveal href="https://www.linkedin.com/in/abdullah-shehrayar/recent-activity/all/" target="_blank" rel="noopener">
+        <span class="mono dim">App Store · Creatives</span>
+        <h3>Apple just gave ASO specialists another screen to optimize for.</h3>
+        <p>What new device sizes mean for screenshot composition, hierarchy and testing.</p>
+        <span class="ins__more">Read on LinkedIn ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq">
+  <div class="wrap faq__grid">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow"><span></span>FAQ</p>
+      <h2 class="display h2">Your brain<br><span class="accent">wants answers.</span></h2>
+    </div>
+    <div class="faq__list" data-reveal>
+      <details open><summary>What kinds of apps do you work with?</summary><p>Games and utilities on Google Play and the App Store: kids’ learning, racing and action games, remote and mirroring tools, AI and productivity apps. If your app lives in a store, it can be optimized.</p></details>
+      <details><summary>How long until I see results?</summary><p>It depends on the niche and starting point. In my case studies, movement showed within weeks and compounded over 1–4 months. Larger jumps usually come once country-level and localized listings roll out.</p></details>
+      <details><summary>Is ranking guaranteed?</summary><p>No honest ASO expert can guarantee a position, because stores control the algorithm. What I guarantee is a proven process, transparent reporting and decisions backed by data.</p></details>
+      <details><summary>Do you provide reports?</summary><p>Yes. You get clear keyword-rank, visibility, download and conversion updates so you always know what changed and why.</p></details>
+      <details><summary>Can you handle paid marketing too?</summary><p>Yes. I run Google UAC campaigns, but always ASO-first: a listing that converts organically makes every paid dollar work harder.</p></details>
+      <details><summary>What do you need to get started?</summary><p>Your app link, Play Console / App Store Connect access (view-only is often enough for an audit), and your growth goals. I’ll send a free audit first.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--center"><span></span>Let’s talk growth<span></span></p>
+    <h2 class="display contact__title">Ready to <span class="accent">climb the charts?</span></h2>
+    <p class="lead lead--center">Send me your app link and I’ll send back a free ASO audit with the quick wins I’d make first.</p>
+    <div class="contact__cta">
+      <a class="btn btn--lime btn--lg magnetic" href="https://wa.me/923277594301?text=Hi%20Abdullah%2C%20I%27d%20like%20a%20free%20ASO%20audit%20for%20my%20app." target="_blank" rel="noopener">Chat on WhatsApp <span class="arr">→</span></a>
+      <a class="btn btn--ghost btn--lg magnetic" href="mailto:abdullahshehray535@gmail.com">Send an email</a>
+    </div>
+    <ul class="contact__links mono">
+      <li><a href="tel:+923277594301">+92 327 7594301</a></li>
+      <li><a href="mailto:abdullahshehray535@gmail.com">abdullahshehray535@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/abdullah-shehrayar" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__row mono">
+    <span>© <span id="year">2026</span> Abdullah Shehrayar × BoostMyApp</span>
+    <span>Based in Pakistan · Working worldwide</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
