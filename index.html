@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="styles2.css">
+<link rel="stylesheet" href="styles3.css">
 <noscript><style>.loader{display:none}[data-reveal]{opacity:1;transform:none}.line>span{transform:none}</style></noscript>
 </head>
 <body>
@@ -40,7 +41,7 @@
     <span class="brand__text">Abdullah <em>×</em> BoostMyApp</span>
   </a>
   <nav class="pill" aria-label="Primary">
-    <a href="#work" data-nav>Work</a>
+    <a href="#results" data-nav>Results</a>
     <a href="#reviews" data-nav>Reviews</a>
     <a href="#services" data-nav>Services</a>
     <a href="#about" data-nav>About</a>
@@ -55,7 +56,7 @@
 <div class="menu" id="menu" aria-hidden="true">
   <nav class="menu__nav">
     <a href="#top"><i class="mono">01</i>Home</a>
-    <a href="#work"><i class="mono">02</i>Work</a>
+    <a href="#results"><i class="mono">02</i>Results</a>
     <a href="#reviews"><i class="mono">03</i>Reviews</a>
     <a href="#services"><i class="mono">04</i>Services</a>
     <a href="#about"><i class="mono">05</i>About</a>
@@ -88,9 +89,14 @@
       <p class="lead" data-reveal>
         I turn struggling apps into monthly money-making machines. <strong>100+ apps scaled to $5K–$1M+/month since 2021</strong> through keyword strategy, store-listing CRO and smart user acquisition.
       </p>
+      <ul class="hero__pts" data-reveal>
+        <li><i>✓</i><span>Keyword rankings that actually climb, like <strong>#78 → #2</strong> in a single month</span></li>
+        <li><i>✓</i><span>Store listings that turn visitors into installs and paying users</span></li>
+        <li><i>✓</i><span>Organic growth first, paid only on a listing that already converts</span></li>
+      </ul>
       <div class="hero__cta" data-reveal>
         <a class="btn btn--lime magnetic" href="#contact">Get a free ASO audit <span class="arr">→</span></a>
-        <a class="btn btn--ghost magnetic" href="#work">See the case studies</a>
+        <a class="btn btn--ghost magnetic" href="#results">See the proof ↓</a>
       </div>
       <div class="hero__trust" data-reveal>
         <div class="avstack" id="avStack" aria-hidden="true"></div>
@@ -131,7 +137,7 @@
       <div class="float float--me"><img id="heroMe" alt="Abdullah Shehrayar"><span><b>Abdullah</b><small>Sr. ASO · UAC</small></span></div>
     </aside>
   </div>
-  <div class="scroll-hint mono" aria-hidden="true"><span></span>Scroll</div>
+  <div class="wrap hero__proof" id="heroProof"></div>
 </section>
 
 <!-- MARQUEE -->
@@ -174,13 +180,13 @@
   <div class="wrap">
     <div class="sec-head sec-head--row" data-reveal>
       <div>
-        <p class="eyebrow"><span></span>Results at a glance</p>
+        <p class="eyebrow"><span></span>Proof · results at a glance</p>
         <h2 class="display h2">Four apps.<br><span class="accent">One playbook.</span></h2>
       </div>
       <p class="sec-sub">Before and after, straight from store consoles. Click any row to open the full case study.</p>
     </div>
     <div class="wall" id="wall"></div>
-    <p class="wall-note mono dim" data-reveal>Grey = where the app started · Green = where it is now</p>
+    <p class="wall-note mono dim" data-reveal>Grey = where the app started · Colour = where it is now. Every number is backed by real console screenshots in the case studies below.</p>
   </div>
 </section>
 
@@ -188,9 +194,9 @@
 <section class="section work" id="work">
   <div class="wrap">
     <div class="sec-head" data-reveal>
-      <p class="eyebrow"><span></span>Selected case studies</p>
+      <p class="eyebrow"><span></span>Deep dive · case studies</p>
       <h2 class="display h2">Real apps.<br><span class="accent">Real numbers.</span></h2>
-      <p class="sec-sub">Pick a project to see the before and after, the store listing as it looks today and the exact playbook behind the numbers. Everything comes from store consoles and rank trackers, not mock-ups.</p>
+      <p class="sec-sub">Pick an app to open its full proof: the before and after table, the real rank-tracker and Play Console screenshots, the store listing as it looks today and the playbook behind it. Tap any screenshot to zoom.</p>
     </div>
 
     <div class="cases" data-reveal>
@@ -452,6 +458,8 @@
 
 <script src="avatars.js"></script>
 <script src="main.js"></script>
+<script src="proof.js"></script>
 <script src="main2.js"></script>
+<script src="main3.js"></script>
 </body>
 </html>
