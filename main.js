@@ -108,7 +108,7 @@
   document.body.classList.add('is-loading');
   (() => {
     const num = $('#loaderNum'), bar = $('#loaderBar');
-    const dur = reduce ? 100 : 2300, t0 = performance.now();
+    const dur = reduce ? 100 : 4200, t0 = performance.now();
     const tick = now => {
       if (loaderDone) return;
       const p = Math.min((now - t0) / dur, 1), e = ease(p);
