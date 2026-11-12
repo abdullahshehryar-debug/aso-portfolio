@@ -96,7 +96,7 @@
 
   /* ---------- Nav highlight (Results covers both result sections) ---------- */
   var links = $$('[data-nav]');
-  var ids = { results: '#results', work: '#results', reviews: '#reviews', services: '#services', about: '#about' };
+  var ids = { results: '#results', work: '#results', hero: '#none', contact: '#none', reviews: '#reviews', services: '#services', about: '#about' };
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) {
       if (!e.isIntersecting) return;
