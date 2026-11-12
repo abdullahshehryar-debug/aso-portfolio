@@ -290,20 +290,5 @@
   });
   renderCase(0);
 
-  /* ---------- Reviews ---------- */
-  const track = $('#revTrack');
-  const initials = n => n.replace(/[^A-Za-z ]/g, '').split(' ').filter(Boolean).slice(0, 2).map(w => w[0]).join('').toUpperCase();
-  track.innerHTML = REVIEWS.map(r => `<figure class="rev"><div class="rev__top"><div class="stars">★★★★★</div><span class="mono dim">${r.d}</span></div><blockquote class="rev__q">“${r.q}”</blockquote><figcaption class="rev__who"><div class="rev__av">${initials(r.n)}</div><div><b>${r.n}</b><span>${r.r}</span></div></figcaption></figure>`).join('');
-  const slide = dir => { const card = $('.rev', track); track.scrollBy({ left: dir * (card.offsetWidth + 18), behavior: 'smooth' }); };
-  $('#revPrev').addEventListener('click', () => slide(-1));
-  $('#revNext').addEventListener('click', () => slide(1));
-  /* drag-to-scroll on desktop */
-  (() => {
-    let down = false, sx = 0, sl = 0;
-    track.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; sx = e.clientX; sl = track.scrollLeft; track.style.scrollSnapType = 'none'; });
-    addEventListener('pointerup', () => { if (!down) return; down = false; track.style.scrollSnapType = ''; });
-    addEventListener('pointermove', e => { if (down) track.scrollLeft = sl - (e.clientX - sx); });
-  })();
-
   $('#year').textContent = new Date().getFullYear();
 })();
