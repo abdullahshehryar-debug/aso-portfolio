@@ -25,7 +25,7 @@
 @keyframes shine{to{background-position:200% center}}
 
 /* Hero: owner chip + avatar stack */
-.float--me{top:40%;left:-38px;bottom:auto;right:auto;background:var(--paper);padding:8px 20px 8px 8px;gap:12px;animation-delay:-1.4s}
+.float--me{top:-26px;left:-30px;bottom:auto;right:auto;background:var(--paper);padding:8px 20px 8px 8px;gap:12px;animation-delay:-1.4s}
 .float--me img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:50% 18%;flex:none;background:var(--surface2)}
 .float--me b{display:block;font-size:14px;line-height:1.1}
 .float--me small{display:block;font-size:11px;opacity:.65;font-weight:500;margin-top:2px}
@@ -144,7 +144,7 @@ body.is-loading .dock{display:none}
 }
 @media (max-width:640px){
   .wr{grid-template-columns:1fr}
-  .float--me{top:auto;bottom:-18px;left:12px}
+  .float--me{top:-22px;left:12px;bottom:auto}
   .hero__trust{align-items:flex-start;flex-direction:column;gap:12px}
   .rev-bar{flex-direction:column;align-items:flex-start}
   .footer{padding-bottom:92px}
