@@ -6,19 +6,18 @@
   var COL = ['#8f7cff', '#3ddcff', '#ff8f4a', '#ff5c9e'];
   var P = 'https://play-lh.googleusercontent.com/';
   var HERO = [
-    { x: '7.5×', n: 'AI Essay Writer', l: 'daily downloads', s: '16 → 120 a day · organic', i: 'a4BTzaql_JwNzoNuzeQUEicZOaPULVqxRyqWz_1lVuu6qDpdCCGwWdCVOF1xk093UyiVBcikDieq4zNYVKmUY24' },
-    { x: '10×', n: 'PDF to Word Converter', l: 'daily downloads', s: '100 → 1,000 a day · organic', i: 'x1_PBEHUi5MxIyL3ibm6j5oklLQ57mrKsSCOifI-0aDHnjl8EW9E7aF-PVrH7QLiqD7Cd7qsiw1BNW3eVw2W7g' },
-    { x: '3,000+', n: 'Screen Mirroring', l: 'daily downloads', s: 'from 4 a day · $0 → $1K/mo', i: 'kwLytJcDJ1GSt8uZcYa1eIQ4NDe2y--e_7v7QKd5XlasqOaLe0LvnX8-Z25gnY_fjOg6p6qAAwZMYoayTzDV' },
-    { x: '~100×', n: 'Universal TV Remote', l: 'daily downloads', s: '10 → 1,000+ a day · organic', i: 'OX-P7GJCsDKhecH4Dc1MV89R4EnG41PAYVe5_iw7C8FNa4wsZuUj4ZIf8WCCLkHwLqVsZCCTBwjJLy_m_ReTUQ' }
+    { x: '7.5×', l: 'Daily downloads', f: '16', t: '120', i: 0 },
+    { x: '20×', l: 'Monthly revenue', f: '$5', t: '$100', i: 1 },
+    { x: '+76', l: 'Keyword rank spots', f: '#78', t: '#2', i: 0 },
+    { x: '3,000+', l: 'Daily downloads', f: '4', t: '3,000+', i: 2 }
   ];
 
   /* ---------- Hero proof strip ---------- */
   var hp = $('#heroProof');
   if (hp) {
-    hp.innerHTML = '<p class="mono dim hp__title">Real results · tap a card to see the proof</p><div class="hp__grid">' + HERO.map(function (h, k) {
-      return '<button type="button" class="hp" data-i="' + k + '" style="--ac:' + COL[k] + '"><img class="appicon" src="' + P + h.i + '=w128-h128-rw" alt="" loading="lazy" referrerpolicy="no-referrer"><div><b>' + h.x + '</b><span>' + h.n + ' · ' + h.l + '</span><small>' + h.s + '</small></div></button>';
+    hp.innerHTML = '<div class="hp__grid">' + HERO.map(function (h) {
+      return '<button type="button" class="hp" data-i="' + h.i + '"><b>' + h.x + '</b><span>' + h.l + '</span><small><s>' + h.f + '</s><i>→</i><em>' + h.t + '</em></small></button>';
     }).join('') + '</div>';
-    $$('img.appicon', hp).forEach(function (im) { im.addEventListener('error', function () { im.style.visibility = 'hidden'; }); });
     $$('.hp', hp).forEach(function (c) {
       c.addEventListener('click', function () {
         var r = $('.wr[data-i="' + c.getAttribute('data-i') + '"]');
