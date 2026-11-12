@@ -147,3 +147,54 @@
   .px__row span:first-child{grid-column:1/-1;font-weight:600}
   .px__row--h span:first-child{display:none}
 }
+
+/* ===== v3.1: red = before, green = after (everywhere), simpler hero ===== */
+:root{--bad:#ff6b6b;--bad2:#ff5a5f;--good:#5dff8f;--good2:#2fbf63}
+.hero__cta{margin-top:26px;margin-bottom:24px}
+.hero__copy .lead{margin-top:2px}
+
+/* Hero proof cards: numbers only, no app names */
+.hp{display:block;padding:20px 22px}
+.hp::before{background:var(--good)}
+.hp:hover{border-color:var(--good)}
+.hp b{color:var(--good);font-size:clamp(30px,3vw,42px)}
+.hp span{font-size:13.5px;margin-top:8px;color:#d3dbd6;font-weight:500}
+.hp small{display:flex;align-items:baseline;gap:9px;margin-top:12px;font-family:'Archivo',sans-serif;font-size:16px;font-weight:800;letter-spacing:-.02em;text-transform:none}
+.hp small s{text-decoration:none;color:var(--bad)}
+.hp small i{font-style:normal;color:var(--dim);font-size:13px}
+.hp small em{font-style:normal;color:var(--good)}
+
+/* Legend */
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.lg{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:999px;border:1px solid;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.lg i{width:10px;height:10px;border-radius:50%}
+.lg--r{color:var(--bad);border-color:rgba(255,107,107,.5);background:rgba(255,107,107,.09)}
+.lg--r i{background:var(--bad2)}
+.lg--g{color:var(--good);border-color:rgba(93,255,143,.5);background:rgba(93,255,143,.09)}
+.lg--g i{background:var(--good)}
+
+/* Results wall */
+.wm__v s{color:var(--bad)}
+.wm__v b{color:var(--good)}
+.wm__v i{color:var(--dim)}
+.wm__track{background:rgba(93,255,143,.1)}
+.wm__track .b1{background:linear-gradient(90deg,var(--good2),var(--good))}
+.wm__track .b0{background:var(--bad2)}
+.wr__x{color:var(--good)}
+
+/* Case panel */
+.cp-big b{color:var(--good)}
+.m__v s{color:var(--bad)}
+.m__v b{color:var(--good)}
+.m__v i{color:var(--dim)}
+.m__bar{background:rgba(93,255,143,.1)}
+.m__bar i{background:linear-gradient(90deg,var(--good2),var(--good))}
+.m__bar em{background:var(--bad2);width:3px;opacity:1}
+
+/* Proof table */
+.px__row s{color:var(--bad);font-weight:600}
+.px__row b{color:var(--good)}
+.px__row--h span:nth-child(2){color:var(--bad)}
+.px__row--h span:nth-child(3){color:var(--good)}
+.px__badge{background:rgba(93,255,143,.1);border-color:rgba(93,255,143,.5);color:var(--good)}
+.px__cap b{color:var(--good)}
