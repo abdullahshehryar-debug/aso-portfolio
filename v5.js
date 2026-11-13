@@ -14,7 +14,7 @@ work.parentNode.insertBefore(sec,work);maskH2(sec.querySelector("h2"));
 $$(".rk__row",sec).forEach(function(row,i){var d=R[i],ln=row.querySelector(".rk__ln"),da=row.querySelector(".rk__d--a"),nb=row.querySelector(".rk__n b"),x0=xp(d[2]);var done=false;
 function setV(v){var x=xp(v);da.style.left=x+"%";ln.style.width=Math.max(0,x-x0)+"%";nb.textContent="#"+Math.round(v);}
 function run(){if(done)return;done=true;if(reduce){setV(d[3]);return;}var t0=null,dur=1900;setTimeout(function(){requestAnimationFrame(function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;setV(d[2]+(d[3]-d[2])*e);if(p<1)requestAnimationFrame(step);});},i*140);}
-new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){run();o.disconnect();}});},{rootMargin:"0px 0px -18% 0px"}).observe(row);});}
+function chk(){if(row.getBoundingClientRect().top<innerHeight*.82){run();removeEventListener("scroll",chk);}}addEventListener("scroll",chk,{passive:true});chk();});}
 /* ---------- name stage with eyes ---------- */
 var ct=document.getElementById("contact");
 if(ct){var nm=document.createElement("section");nm.className="nm";nm.setAttribute("aria-hidden","true");var bt=["Google Play","App Store","Keywords","Conversion","Rankings","Installs","Revenue"].map(function(w){return "<span>"+w+" ✦</span>";}).join("");
