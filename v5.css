@@ -63,3 +63,7 @@ h2.display:not(.contact__title) .accent,.hero h1 .accent{font-family:"Instrument
 /* v5.2 mobile fixes */
 @media(max-width:700px){.nm__r{font-size:min(10.6vw,64px)!important}.nm{padding:48px 0}}
 @media(max-width:560px){.hero__title{font-size:8.5vw!important}}
+
+/* v5.3 reviews cleanup */
+.rev-bar,.rev-note,.rev-controls,.rev-tabs,.rev-dots,#revDots,.pop{display:none!important}
+.rev-rail.anim{transition-duration:.4s!important}
