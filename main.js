@@ -108,7 +108,7 @@
   document.body.classList.add('is-loading');
   (() => {
     const num = $('#loaderNum'), bar = $('#loaderBar');
-    const dur = reduce ? 100 : 4200, t0 = performance.now();
+    const seen = (function () { try { return sessionStorage.getItem('introSeen') === '1'; } catch (e) { return false; } })(); try { sessionStorage.setItem('introSeen', '1'); } catch (e) {} if (seen) { loader.style.display = 'none'; } const dur = (reduce || seen) ? 100 : (innerWidth < 760 ? 1500 : 2500), t0 = performance.now();
     const tick = now => {
       if (loaderDone) return;
       const p = Math.min((now - t0) / dur, 1), e = ease(p);
