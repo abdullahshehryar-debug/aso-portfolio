@@ -7,7 +7,7 @@ var A=[
 {n:"Screen Mirroring",b:"4",a:"3,000+",u:"/day",k:"#239 → #9",c:"#ff8f4a",x:"4%",y:"64%",r:4,d:800},
 {n:"Universal TV Remote",b:"60",a:"2,100+",u:" visitors",k:"#109 → #27",c:"#ff5c9e",x:"64%",y:"66%",r:-4,d:1050}
 ];
-var K=[{t:"ai essay writer",v:"#2",x:"38%",y:"4%",d:1300},{t:"pdf to word",v:"#1",x:"40%",y:"90%",d:1450},{t:"screen mirroring",v:"#3",x:"1.5%",y:"40%",d:1600},{t:"all smart tv remote",v:"#8",x:"78%",y:"42%",d:1750}];
+var K=[{t:"ai essay writer",v:"#2",x:"38%",y:"4%",d:1300},{t:"docx to pdf converter",v:"#1",x:"40%",y:"90%",d:1450},{t:"miracast",v:"#3",x:"1.5%",y:"40%",d:1600},{t:"all smart tv remote",v:"#8",x:"78%",y:"42%",d:1750}];
 var css=[".intro-stage{position:absolute;inset:0;overflow:hidden;pointer-events:none}",
 ".intro-stage:before{content:'';position:absolute;left:50%;top:50%;width:min(64vw,640px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:1px dashed rgba(185,255,60,.35);box-shadow:0 0 90px rgba(185,255,60,.1) inset;animation:icspin 30s linear infinite}",
 ".intro-stage:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(143,124,255,.2),transparent 40%),radial-gradient(circle at 85% 80%,rgba(255,92,158,.16),transparent 40%),radial-gradient(circle at 80% 15%,rgba(61,220,255,.14),transparent 35%)}",
