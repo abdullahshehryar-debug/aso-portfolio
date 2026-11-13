@@ -59,3 +59,7 @@ h2.display:not(.contact__title) .accent,.hero h1 .accent{font-family:"Instrument
 .hero .nm{grid-column:1/-1;margin-top:clamp(40px,5vw,80px);padding-top:0;padding-bottom:clamp(20px,3vw,50px)}
 @media(max-width:900px){.hero__me{justify-self:center;width:min(78%,340px);margin-top:28px}.hero__badge,.hero__badge-c{left:-12px;width:92px;height:92px;bottom:-24px}.hero .nm{margin-top:36px}.float,.rev-card,.pop,.dock a,.ic,.header.scrolled{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}.header.scrolled{background:rgba(7,9,10,.94)!important}}
 @media(max-width:560px){.hero__title{font-size:9.6vw!important;line-height:1}.hero__title .line.accent{font-size:1.05em}.sec-head{margin-bottom:36px}}
+
+/* v5.2 mobile fixes */
+@media(max-width:700px){.nm__r{font-size:min(10.6vw,64px)!important}.nm{padding:48px 0}}
+@media(max-width:560px){.hero__title{font-size:8.5vw!important}}
