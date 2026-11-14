@@ -65,12 +65,12 @@
       steps: ['Country-wise keyword research', 'Custom listings & screenshot tests', 'Keyword combinations for secondary markets'],
       insight: 'Country-level targeting, not just better metadata, unlocked the visibility. Research found real demand in markets like India, Iran, Venezuela and Egypt that the client didn’t know existed.',
       quote: ['Really impressed with the ASO results! Our app was ranking around #109 for “Universal TV Remote,” and after the optimization, it reached #27. I honestly thought ranking in this niche would be extremely difficult, so I wasn’t expecting such a big improvement. Great work and highly recommended!', 'Client · Universal TV Remote App']
-    }
+    }, { n: '05', name: 'Mobile Number Tracker', niche: 'Maps & Navigation', store: 'Google Play', time: '2 months', mode: '100% organic', summary: 'Two months of ASO and not a single paid install took “mobile number tracker app” from position 56 to position 3, while daily store visitors and installs peaked at about 2× their 28-day average.', big: [['#3', 'From position 56'], ['2×', 'Daily installs vs 28-day avg']], metrics: [ { l: 'Daily visitors · 28-day avg to Nov 6', from: 201, to: 353 }, { l: 'Daily installs · 28-day avg to Nov 6', from: 77.6, to: 156, dec: 1 }, { l: 'Rank · “mobile number tracker app”', rank: [56, 3] } ], steps: ['Keyword research on core terms', 'Country-level localization', 'Conversion-focused store listing', 'In-app review flow'], insight: 'Zero paid installs. The core keyword moved from position 56 to 3, and the Play Console shows daily store visitors and acquisitions peaking at about 2× their 28-day averages.', quote: null }
   ];
 
 
   const PL = 'https://play-lh.googleusercontent.com/';
-  const MEDIA = {
+  const MEDIA = { '05': { listing: 'Mobile Number Tracker', installs: '10K+', icon: 'MTcvXrSjMvEb9X4QDusw8Cs-LPv3YeIKJdBmj_-JyByhNI0-_xATsqcmt1EkUhUqWYtjGqWn6qASFMB0qvL1', shots: [] },
     '01': { listing: 'AI Essay Writer', installs: '10K+', icon: 'a4BTzaql_JwNzoNuzeQUEicZOaPULVqxRyqWz_1lVuu6qDpdCCGwWdCVOF1xk093UyiVBcikDieq4zNYVKmUY24',
       shots: ['Ud7plxjx3rTbSnJUZkEV23tdikTt2m3wf5QO6G7hQNX-S45zDTUDsLLx0LI4ttxjtnh3L4prvDhO9GfutXM0Bg','nQtV7_wmzXTWm85EBHXRmICTDNn6ERrDtSLKTadsCn806swf_ZG__Be3W4hABT0Mj3K7IJLuWSagNRQREUmH','cGu1mvEzR7sDNx-LCBsWvfAMErWoS8SUjyzG7dC-YC6p9PUtFR4LYOTefwxumw4IJr41FxQ5hwtoabLVDpjnAg4','duy1bR17E754kUNPLKuh-LBYa9z53GZyX987xrYShBKIKd3TkxL9DytEkRQDDW8YdulFGsXftgkPIJGzaZnlszk'] },
     '02': { listing: 'PDF to Word Converter', installs: '100K+', icon: 'x1_PBEHUi5MxIyL3ibm6j5oklLQ57mrKsSCOifI-0aDHnjl8EW9E7aF-PVrH7QLiqD7Cd7qsiw1BNW3eVw2W7g',
