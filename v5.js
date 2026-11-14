@@ -44,3 +44,33 @@ window.addEventListener("load",function(){setTimeout(function(){if(window.Scroll
 
 /* v5.3 cleanup */
 (function(){var c=document.querySelectorAll(".rating-card .mono.dim");if(c.length){c[0].textContent="Verified client reviews";for(var i=1;i<c.length;i++)c[i].remove();}var n=document.querySelector(".rev-note");if(n)n.remove();})();
+
+/* v5.6 combined results + case detail */
+(function(){var res=document.getElementById("results"),list=document.getElementById("caseList");if(!res||!list)return;
+var firstWr=res.querySelector(".wr");if(!firstWr)return;var wall=firstWr.parentElement;
+var host=document.createElement("div");host.id="caseDetail";host.className="cd";wall.insertAdjacentElement("afterend",host);
+var rk=document.getElementById("ranks");if(rk){var box=document.createElement("div");box.className="cd-ranks";[].slice.call(rk.querySelectorAll(".wrap > *")).forEach(function(n){box.appendChild(n);});res.querySelector(".wrap").appendChild(box);rk.style.display="none";}
+var cache={},busy=false;
+function q(p,s){return p.querySelector(s);}
+function snap(i,cb){if(cache[i])return cb(cache[i]);var bs=list.querySelectorAll("button");if(!bs[i])return;if(busy)return;busy=true;bs[i].click();setTimeout(function(){var p=document.getElementById("casePanel");var d={};
+d.name=(q(p,".cp-app__n")||{}).textContent||"";var ap=q(p,".cp-app");d.icon=ap&&q(ap,"img")?q(ap,"img").outerHTML:"";d.sub=ap&&ap.querySelectorAll("p")[1]?ap.querySelectorAll("p")[1].textContent:"";
+d.tags=[].map.call(p.querySelectorAll(".cp-head .tag"),function(x){return x.textContent.trim();});d.sum=(q(p,".cp-sum")||{}).textContent||"";
+d.big=[].map.call(p.querySelectorAll(".cp-big > div"),function(x){return [q(x,"b").textContent,q(x,"span").textContent];});
+d.m=[].map.call(p.querySelectorAll(".cp-metrics .m"),function(m){return {l:q(m,".m__l").textContent,v:q(m,".m__v").innerHTML};});
+d.figs=[].map.call(p.querySelectorAll(".px__fig"),function(f){var b=q(f,".px__cap b");return {s:q(f,"img").src,t:b.textContent,c:q(f,".px__cap").textContent.replace(b.textContent,"").trim()};});
+d.steps=[].map.call(p.querySelectorAll(".cp-steps span"),function(x){return x.textContent;});d.ins=(q(p,".cp-insight")||{}).textContent||"";
+cache[i]=d;busy=false;cb(d);},900);}
+function render(d){var h='<div class="cd__bar"><span class="mono dim">Case study</span><button class="cd__x" type="button">Close \u2715</button></div>';
+h+='<h3 class="display cd__t">'+d.name+'</h3><div class="c5__head">'+d.icon+'<div><span class="mono dim">'+d.sub+'</span></div></div>';
+h+='<div class="c5__chips">'+d.tags.map(function(x){return "<span>"+x+"</span>";}).join("")+'</div><p class="c5__d">'+d.sum+'</p>';
+h+='<div class="cd__big">'+d.big.map(function(b){return "<div><b>"+b[0]+"</b><span>"+b[1]+"</span></div>";}).join("")+'</div>';
+h+='<div class="c5__stats cd__stats">'+d.m.map(function(c){return '<div class="c5__card"><h4>'+c.l+'</h4><div class="c5__v">'+c.v+'</div></div>';}).join("")+'</div>';
+h+='<div class="c5__grid">'+d.figs.map(function(f){return '<figure class="c5__fig"><img src="'+f.s+'" alt="'+f.t+'" loading="lazy"><figcaption><b>'+f.t+'</b>'+f.c+'</figcaption></figure>';}).join("")+'</div>';
+if(d.steps.length)h+='<p class="mono dim cd__sub">The playbook</p><div class="c5__chips">'+d.steps.map(function(x){return "<span>"+x+"</span>";}).join("")+'</div>';
+if(d.ins)h+='<p class="c5__d">'+d.ins+'</p>';return h;}
+function open(i){snap(i,function(d){host.innerHTML=render(d);host.classList.add("on");var y=host.getBoundingClientRect().top+window.scrollY-90;if(window.__lenis)window.__lenis.scrollTo(y);else window.scrollTo({top:y,behavior:"smooth"});});}
+document.addEventListener("click",function(e){var w=e.target.closest&&e.target.closest("#results .wr");if(w){e.preventDefault();e.stopImmediatePropagation();open(+w.getAttribute("data-i")||0);return;}
+if(e.target.closest&&e.target.closest(".cd__x")){host.classList.remove("on");host.innerHTML="";var y=wall.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:y,behavior:"smooth"});return;}
+var f=e.target.closest&&e.target.closest("#caseDetail .c5__fig");var lb=document.querySelector(".lb");if(f&&lb){lb.querySelector("img").src=f.querySelector("img").src;lb.querySelector(".lb__cap").textContent=f.querySelector("b").textContent+" \u00b7 tap anywhere to close";lb.classList.add("on");}},true);
+document.addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")return;var w=e.target.closest&&e.target.closest("#results .wr");if(w){e.preventDefault();e.stopImmediatePropagation();open(+w.getAttribute("data-i")||0);}},true);
+})();
