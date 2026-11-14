@@ -95,3 +95,8 @@ h2.display:not(.contact__title) .accent,.hero h1 .accent{font-family:"Instrument
 .c5__chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
 .c5__chips span{font:500 12px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;color:#b9ff3c;border:1px solid rgba(185,255,60,.35);border-radius:999px;padding:7px 12px}
 .c5__d{max-width:760px;margin:16px 0 0;color:#aab3ae;font-size:clamp(15px,1.3vw,18px);line-height:1.6}
+
+/* v5.6 combined results + hide store-listing label */
+.cp-sub:has(+ .cp-shots){display:none!important}
+#results{padding-bottom:clamp(24px,4vw,56px)!important}
+#ranks{padding-top:clamp(24px,4vw,56px)!important}
