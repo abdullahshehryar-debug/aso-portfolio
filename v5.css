@@ -67,3 +67,26 @@ h2.display:not(.contact__title) .accent,.hero h1 .accent{font-family:"Instrument
 /* v5.3 reviews cleanup */
 .rev-bar,.rev-note,.rev-controls,.rev-tabs,.rev-dots,#revDots,.pop{display:none!important}
 .rev-rail.anim{transition-duration:.4s!important}
+
+/* v5.4 case 05 + hide app UI shots + faster reviews */
+.cp-shots{display:none!important}
+.rev-rail.anim{transition-duration:.3s!important}
+.c5 .eyebrow{margin-bottom:18px}
+.c5__head{display:flex;gap:16px;align-items:center;margin:26px 0 6px}
+.c5__head b{display:block;font-size:20px;color:#fff;margin-bottom:4px}
+.c5__ic{width:64px;height:64px;border-radius:16px;flex:none}
+.c5__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0}
+.c5__card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:22px}
+.c5__card h4{font:500 12px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#9aa5a0;margin:0 0 14px}
+.c5__v{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font:800 clamp(28px,3.2vw,44px)/1 Archivo,Inter,sans-serif}
+.c5__v s{color:#ff6b6b;text-decoration:none;font-size:.75em}
+.c5__v b{color:#4dff9a}
+.c5__v span{color:#9aa5a0;font-size:.6em}
+.c5__card p{margin:12px 0 0;font-size:13px;color:#9aa5a0}
+.c5__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
+.c5__fig{margin:0;cursor:zoom-in;border-radius:16px;overflow:hidden;background:#0d1110;border:1px solid rgba(255,255,255,.09)}
+.c5__fig img{width:100%;display:block}
+.c5__fig figcaption{padding:12px 14px;font-size:12.5px;line-height:1.45;color:#aab3ae}
+.c5__fig figcaption b{display:block;color:#fff;margin-bottom:4px;font-size:13px}
+@media(max-width:1000px){.c5__grid{grid-template-columns:repeat(2,1fr)}.c5__stats{grid-template-columns:1fr}}
+@media(max-width:560px){.c5__grid{grid-template-columns:1fr}}
