@@ -1,3 +1,4 @@
+window.PROOF = window.PROOF || {}; window.PROOF.a5 = { rank: 'case5-keywords-b.jpg', rank2: 'case5-keywords-a.jpg', ts: 'case5-visitors.jpg', rev: 'case5-acquisitions.jpg' };
 /* v3: hero proof cards, per-app colours, proof gallery + lightbox */
 (function () {
   'use strict';
@@ -34,20 +35,20 @@
     [['Daily downloads', '~16', '~120 (100% organic)'], ['Monthly revenue', '~$5', '~$180'], ['Store rating', '2.8★', '4.4★+'], ['5★ reviews', 'about 1 every 2–3 days', '4–5+ per day'], ['Rank: “ai essay writer” (US)', 'Position 78', 'Position 2']],
     [['Daily downloads', '~100', '~1,000 (10×)'], ['Monthly revenue', '~$5', '~$100 (20×)'], ['5★ reviews', 'about 1 every 3–4 days', '20–25 per day'], ['Rank: “pdf to word converter”', 'Position 59', 'Position 9'], ['Rank: “docx to pdf converter”', 'Position 31', 'Position 1']],
     [['Daily downloads', '4–13', '3,000+ (70% organic, 30% paid)'], ['Monthly revenue', '$5–10 (paid ads only)', '~$1,000'], ['Store rating', '3.4★ (101 ratings)', '4.5★ (8,990 ratings)'], ['5★ reviews', '1–3 per month', '150+ per day'], ['Rank: “screen mirroring”', 'Position 239', 'Position 9'], ['Rank: “miracast”', 'Position 93', 'Position 3']],
-    [['Daily store visitors', '60–80', '2,100+'], ['Daily downloads', '9–12', '900–1,100'], ['Monthly revenue', '$0 for 3 straight months', '~$80'], ['Rank: “universal tv remote”', 'Position 109', 'Position 27'], ['Rank: “all smart tv remote”', 'Position 68', 'Position 8']]
+    [['Daily store visitors', '60–80', '2,100+'], ['Daily downloads', '9–12', '900–1,100'], ['Monthly revenue', '$0 for 3 straight months', '~$80'], ['Rank: “universal tv remote”', 'Position 109', 'Position 27'], ['Rank: “all smart tv remote”', 'Position 68', 'Position 8'], [['Daily visitors (28-day avg to Nov 6)', '201', '353'], ['Daily acquisitions (28-day avg to Nov 6)', '77.6', '156'], ['Paid installs', 'None', 'None (100% organic)'], ['Rank: “mobile number tracker app”', 'Position 56', 'Position 3']]]
   ];
   var TITLES = [
     { ts: 'Store listing acquisitions · Google Play Console', rev: 'Revenue and rating distribution' },
     { ts: 'Store listing acquisitions · Google Play Console', rev: 'Revenue and rating distribution' },
     { ts: 'Store listing acquisitions and visitors', rev: 'Revenue and rating distribution' },
-    { ts: 'Store listing visitors and acquisitions', rev: 'Revenue by product type' }
+    { ts: 'Store listing visitors and acquisitions', rev: 'Revenue by product type' }, { rank: 'Keyword rankings · before ASO', ts: 'Store listing visitors · Google Play Console', rev: 'Store listing acquisitions · Google Play Console' }
   ];
   var CAP = [
     { rank: 'Same keywords, same tracker. “ai essay writer” moved from position 78 to position 2 in one month, with “essay writer” and “essay writing app” climbing too.', ts: 'Daily acquisitions stay flat for most of August, then spike to about 120 a day, all from organic Google Play discovery.', rev: 'Subscription revenue jumps once ASO takes effect, and ratings climb from 2.8★ to 4.4★ after the in-flow review prompt.' },
     { rank: '“pdf to word converter” moved from position 59 to position 9 and “docx to pdf converter” from position 31 to position 1.', ts: 'Daily installs stay flat until the start of July, then climb steadily toward about 1,000 a day.', rev: 'Monthly revenue climbs from around $5 to around $100, and the review prompt brings 20–25 five-star ratings a day.' },
     { rank: 'Before: every core keyword effectively unranked, “screen mirroring” at position 239. After ASO plus paid: core keywords on pages 1–2 and “miracast” at position 3.', ts: 'Flat through May and June, then a sharp climb from July. Acquisitions peaked at 3,261 a day by the end of August.', rev: 'Close to $0 through June, then first real revenue in July and August, about $850 in a single month by September.' },
     { rank: '“universal tv remote” moved from position 109 to 27, “ir android tv remote” from 127 to 47, and “all smart tv remote” from 68 to 8.', ts: 'From July 20, daily visitors jump from 60–80 to 2,100+, and daily installs from single digits to 900–1,100.', rev: 'Revenue was effectively zero for six months. The first real revenue appears in August, right as organic traffic arrives.' }
-  ];
+  , { rank: 'Rank tracker before optimization. “mobile number tracker app” sits at position 56.', rank2: 'Same rank tracker after two months of ASO. “mobile number tracker app” reaches position 3.', ts: 'Daily visitors peak at 353 on Nov 6, 2025 against a 28-day average of 201.', rev: 'Daily acquisitions reach 156 on the same day against a 28-day average of 77.6.' } ];
   var panel = $('#casePanel'), cases = $('.cases'), list = $('#caseList');
   function sel() {
     var bs = $$('button', list);
@@ -58,10 +59,10 @@
     var d = window.PROOF && window.PROOF['a' + (i + 1)];
     if (!d) return '';
     var rows = TABLE[i].map(function (r) { return '<div class="px__row"><span>' + r[0] + '</span><s>' + r[1] + '</s><b>' + r[2] + '</b></div>'; }).join('');
-    var figs = [['rank', 'Keyword rankings · before vs after'], ['ts', TITLES[i].ts], ['rev', TITLES[i].rev]].filter(function (f) { return d[f[0]]; }).map(function (f) {
+    var figs = [['rank', TITLES[i].rank || 'Keyword rankings · before vs after'], ['rank2', 'Keyword rankings · after ASO'], ['ts', TITLES[i].ts], ['rev', TITLES[i].rev]].filter(function (f) { return d[f[0]]; }).map(function (f) {
       return '<figure class="px__fig"><img src="' + d[f[0]] + '" alt="' + f[1] + '" loading="lazy"><span class="px__zoom">Zoom</span><figcaption class="px__cap"><b>' + f[1] + '</b>' + CAP[i][f[0]] + '</figcaption></figure>';
     }).join('');
-    return '<div class="px"><div class="px__head"><p class="mono dim cp-sub" style="margin:0">Proof · before vs after</p><span class="px__badge">Real console screenshots</span></div><div class="px__table"><div class="px__row px__row--h"><span>Metric</span><span>Before</span><span>After</span></div>' + rows + '</div><div class="px__grid">' + figs + '</div><p class="px__note mono dim">Cropped from the case-study report delivered to the client. Tap any image to zoom.</p></div>';
+    return '<div class="px"><div class="px__head"><p class="mono dim cp-sub" style="margin:0">Proof · before vs after</p><span class="px__badge">Real console screenshots</span></div><div class="px__table"><div class="px__row px__row--h"><span>Metric</span><span>Before</span><span>After</span></div>' + rows + '</div><div class="px__grid">' + figs + '</div><p class="px__note mono dim">Real rank-tracker and Play Console screenshots. Tap any image to zoom.</p></div>';
   }
   function inject() {
     if (!panel || panel.querySelector('.px')) return;
