@@ -74,3 +74,10 @@ if(e.target.closest&&e.target.closest(".cd__x")){host.classList.remove("on");hos
 var f=e.target.closest&&e.target.closest("#caseDetail .c5__fig");var lb=document.querySelector(".lb");if(f&&lb){lb.querySelector("img").src=f.querySelector("img").src;lb.querySelector(".lb__cap").textContent=f.querySelector("b").textContent+" \u00b7 tap anywhere to close";lb.classList.add("on");}},true);
 document.addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")return;var w=e.target.closest&&e.target.closest("#results .wr");if(w){e.preventDefault();e.stopImmediatePropagation();open(+w.getAttribute("data-i")||0);}},true);
 })();
+
+/* v5.8 reviews slow continuous marquee */
+(function(){var tr=document.getElementById("revTrack"),rail=tr&&tr.querySelector(".rev-rail");if(!rail)return;var tries=0;
+function go(){var cards=rail.children;if(!cards.length)return;var w=cards[0].getBoundingClientRect().width;if(w<50){if(tries++<20)setTimeout(go,400);return;}
+var a=rail.innerHTML,m=document.createElement("div");m.className="rev-marq";m.innerHTML=a+a;m.style.setProperty("--cw",w+"px");m.style.animationDuration=Math.max(60,(cards.length*(w+18))/30)+"s";rail.style.display="none";tr.appendChild(m);}
+setTimeout(go,300);
+})();
