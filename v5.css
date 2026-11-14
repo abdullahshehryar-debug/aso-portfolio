@@ -119,3 +119,6 @@ h2.display:not(.contact__title) .accent,.hero h1 .accent{font-family:"Instrument
 .cd__sub{margin:28px 0 10px}
 .cd-ranks{margin-top:clamp(56px,8vw,110px)}
 @media(max-width:560px){.cd{border-radius:20px}.cd .c5__grid{grid-template-columns:1fr!important}}
+
+/* v5.7 detail icon size */
+.cd .c5__head img,.cd .appicon{width:64px!important;height:64px!important;max-width:64px;border-radius:16px;object-fit:cover;flex:none}
