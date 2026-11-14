@@ -122,3 +122,9 @@ h2.display:not(.contact__title) .accent,.hero h1 .accent{font-family:"Instrument
 
 /* v5.7 detail icon size */
 .cd .c5__head img,.cd .appicon{width:64px!important;height:64px!important;max-width:64px;border-radius:16px;object-fit:cover;flex:none}
+
+/* v5.8 reviews marquee */
+.rev-marq{display:flex;width:max-content;animation:revmarq 90s linear infinite;will-change:transform}
+.rev-marq>*{flex:0 0 var(--cw)!important;width:var(--cw)!important;margin:0 18px 0 0!important}
+@keyframes revmarq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.rev-marq{animation:none}}
