@@ -102,3 +102,10 @@ function open(){host.innerHTML=render();host.classList.add("on");var y=host.getB
 window.addEventListener("click",function(e){var w=e.target.closest&&e.target.closest(".wr[data-x]");if(w){e.preventDefault();e.stopImmediatePropagation();open();}},true);
 window.addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")return;var w=e.target.closest&&e.target.closest(".wr[data-x]");if(w){e.preventDefault();e.stopImmediatePropagation();open();}},true);
 })();
+
+/* v5.10 reveal every wall row, including rows added later */
+(function(){var wall=document.getElementById("wall");if(!wall||!("IntersectionObserver" in window))return;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.05});
+function scan(){[].forEach.call(wall.querySelectorAll(".wr"),function(r){if(!r.classList.contains("in")&&!r.__rv){r.__rv=1;io.observe(r);}});}
+scan();new MutationObserver(scan).observe(wall,{childList:true});setTimeout(scan,1500);
+})();
