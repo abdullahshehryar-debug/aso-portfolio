@@ -159,3 +159,41 @@ bigs:[["3.7\u00d7","Daily installs"],["2.7\u00d7","Daily store visitors"]],
 cards:[["Daily visitors \u00b7 avg to peak","<s>84</s><i>\u2192</i><b>226</b>"],["Daily installs \u00b7 avg to peak","<s>8.36</s><i>\u2192</i><b>31</b>"],["Monthly active users \u00b7 28-day avg to Jun 25","<s>170</s><i>\u2192</i><b>197</b>"]],
 figs:[["bus-kpis.jpg","Play Console KPIs \u00b7 Jun 5 to Jul 4, 2025","Monthly active users climb from a 28-day average of 170 to 197, and store listing visitors from 84 to 226."],["bus-visitors.jpg","Store listing visitors \u00b7 daily","Daily visitors sit between 50 and 120 through June, then reach 226 on Jul 4 against a 28-day rolling average of 84.0."],["bus-acquisitions.jpg","Store listing acquisitions \u00b7 daily","Daily acquisitions hold under 13 for most of the month, then jump to 31 on Jul 4 against a 28-day rolling average of 8.36."]]});
 })();
+
+/* v5.13 intro: search, climb to #1, curtain reveal */
+(function(){if(window.__i2)return;window.__i2=1;
+var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,seen=false;
+try{seen=sessionStorage.getItem("intro2Seen")==="1";sessionStorage.setItem("intro2Seen","1");}catch(e){}
+if(reduce||seen||!window.gsap)return;
+var ic=document.querySelectorAll("#results .wr .appicon")[1],src=ic?ic.getAttribute("src"):"";
+var Q="docx to pdf converter",mobile=innerWidth<700;
+var el=document.createElement("div");el.id="i2";el.setAttribute("aria-hidden","true");
+var sk='<div class="i2__row i2__sk"><i class="i2__ic"></i><span class="l1"></span><span class="l2"></span></div>';
+el.innerHTML='<div class="i2__c i2__c--t"></div><div class="i2__c i2__c--b"></div><div class="i2__in"><div class="i2__bg"></div><button class="i2__skip" type="button">Skip</button><div class="i2__box"><p class="i2__label">Google Play \u00b7 US \u00b7 search</p><div class="i2__search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#9aa5a0" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span class="i2__q"></span><i class="i2__caret"></i></div><div class="i2__list">'+sk+sk+sk+sk+'<div class="i2__row i2__me"><img class="i2__ic" src="'+src+'" alt=""><div><b>PDF to Word Converter</b><small>Utilities</small></div><em class="i2__pos">#31</em></div></div></div><div class="i2__big"><b>#31</b><span>docx to pdf converter</span></div><h2 class="i2__tag"><span class="i2__ln"><span>I take the stress out of</span></span><span class="i2__ln"><span><em>app growth.</em></span></span></h2></div>';
+document.body.appendChild(el);
+var q=el.querySelector(".i2__q"),pos=el.querySelector(".i2__pos"),big=el.querySelector(".i2__big b"),me=el.querySelector(".i2__me"),sks=el.querySelectorAll(".i2__sk"),rows=el.querySelectorAll(".i2__row"),H=rows[1].offsetTop-rows[0].offsetTop;
+var root=document.documentElement,lz=window.__lenis;root.style.overflow="hidden";if(lz&&lz.stop)lz.stop();
+function stop(e){e.stopPropagation();e.preventDefault();}
+el.addEventListener("wheel",stop,{passive:false});el.addEventListener("touchmove",stop,{passive:false});
+var done=false;function finish(){if(done)return;done=true;root.style.overflow="";if(lz&&lz.start)lz.start();el.remove();}
+var o={t:0,r:31},g=gsap;
+var tl=g.timeline({onComplete:finish});
+tl.from(el.querySelector(".i2__box"),{y:30,opacity:0,duration:.5,ease:"power3.out"},.1)
+.to(o,{t:Q.length,duration:.85,ease:"none",onUpdate:function(){q.textContent=Q.slice(0,Math.round(o.t));}},.45)
+.from(rows,{y:24,opacity:0,duration:.4,stagger:.07,ease:"power3.out"},1.25)
+.from(el.querySelector(".i2__big"),{opacity:0,y:40,duration:.5,ease:"power3.out"},1.35)
+.to(o,{r:1,duration:1.15,ease:"power3.inOut",onUpdate:function(){var v="#"+Math.max(1,Math.round(o.r));pos.textContent=v;big.textContent=v;}},1.8)
+.to(me,{y:-4*H,duration:1.15,ease:"expo.inOut"},1.8)
+.to(sks,{y:H,duration:1.15,ease:"expo.inOut",stagger:.05},1.8)
+.add(function(){me.classList.add("hit");},2.75)
+.to(el.querySelector(".i2__box"),{opacity:0,y:-30,duration:.35,ease:"power2.in"},3.2)
+.to(el.querySelector(".i2__big"),{scale:1.15,opacity:0,duration:.4,ease:"power2.in"},3.2)
+.fromTo(el.querySelectorAll(".i2__ln > span"),{yPercent:110},{yPercent:0,duration:.6,ease:"expo.out",stagger:.1},3.4)
+.to(el.querySelector(".i2__tag"),{opacity:0,duration:.3,ease:"power2.in"},4.3)
+.to(el.querySelector(".i2__bg"),{opacity:0,duration:.3},4.3)
+.to(el.querySelector(".i2__c--t"),{yPercent:-101,duration:.85,ease:"expo.inOut"},4.5)
+.to(el.querySelector(".i2__c--b"),{yPercent:101,duration:.85,ease:"expo.inOut"},4.5);
+if(mobile)tl.timeScale(1.35);
+el.querySelector(".i2__skip").addEventListener("click",function(){tl.timeScale(6);});
+setTimeout(finish,9000);
+})();
