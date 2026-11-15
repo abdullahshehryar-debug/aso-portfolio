@@ -109,3 +109,29 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 function scan(){[].forEach.call(wall.querySelectorAll(".wr"),function(r){if(!r.classList.contains("in")&&!r.__rv){r.__rv=1;io.observe(r);}});}
 scan();new MutationObserver(scan).observe(wall,{childList:true});setTimeout(scan,1500);
 })();
+
+/* v5.11 game case + store badges */
+(function(){var wall=document.getElementById("wall"),host=document.getElementById("caseDetail");if(!wall||!host)return;
+var SVG={play:'<svg viewBox="0 0 24 24"><path fill="#00d7fe" d="M3.5 2.4 13.5 12 3.5 21.6z"/><path fill="#00f076" d="M3.8 2 16.6 9.2 13.5 12.2z"/><path fill="#ff3a44" d="M3.8 22 16.6 14.8 13.5 11.8z"/><path fill="#ffce00" d="M16.6 9.2 20.4 11.3Q21.2 12 20.4 12.7L16.6 14.8 13.5 12z"/></svg>',ios:'<svg viewBox="0 0 24 24"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>'};
+function badge(img,p){if(!img||!img.parentNode||img.parentNode.classList.contains("ico"))return;var w=document.createElement("span");w.className="ico";img.parentNode.insertBefore(w,img);w.appendChild(img);var b=document.createElement("i");b.className="sb sb--"+p;b.title=p==="ios"?"iOS App Store":"Google Play";b.innerHTML=SVG[p];w.appendChild(b);}
+function pass(){[].forEach.call(wall.querySelectorAll(".wr"),function(r){badge(r.querySelector(".wr__app img"),r.hasAttribute("data-x")?"ios":"play");});}
+var IC="https://play-lh.googleusercontent.com/58daIOyUkqmznnEQfvqv2nZxp5HbnWtoi-xw66yrGg8RJkal0ZWHmRe7TQ496PYo5MKjDwtcFeDjB5TOZfJosj4=w128-h128-rw";
+var n=wall.querySelectorAll(".wr").length;
+function wm(l,a,b,w){return '<div class="wm"><p class="wm__l">'+l+'</p><div class="wm__v"><s>'+a+'</s><i>\u2192</i><b>'+b+'</b></div><div class="wm__track"><i class="b1" data-w="100" style="width:100%"></i><i class="b0" data-w="'+w+'" style="width:'+w+'%"></i></div></div>';}
+var r=document.createElement("div");r.className="wr";r.setAttribute("role","button");r.tabIndex=0;r.setAttribute("data-g","1");r.setAttribute("data-i",String(n));r.setAttribute("aria-label","Open the Spider Fighter Man case study");r.style.setProperty("--ac","#3ddcff");
+r.innerHTML='<div class="wr__app"><img class="appicon" src="'+IC+'" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div><b>Spider Fighter Man: Hero War</b><span>Games \u00b7 Role Playing</span></div></div>'+wm("Daily visitors \u00b7 avg to peak","309","803","38.5")+wm("Daily installs \u00b7 avg to peak","60.3","153","39.4")+'<div class="wr__x">100\u00d7<small>Total installs</small><em>Open case study \u2192</em></div>';
+wall.appendChild(r);
+var F=[["game-kpis.jpg","Store listing KPIs \u00b7 Jun 4 to Jul 3, 2025","Play Console. Store listing visitors go from a 28-day average of 309 to 803 on Jul 3, and acquisitions from 60.3 to 153."],["game-acquisitions.jpg","Store listing acquisitions \u00b7 daily","Daily acquisitions hold near 45 to 55 through June, then climb to 153 on Jul 3 against a 28-day rolling average of 60.3."]];
+function render(){var h='<div class="cd__bar"><span class="mono dim">Case study</span><button class="cd__x" type="button">Close \u2715</button></div>';
+h+='<h3 class="display cd__t">Spider Fighter Man: Hero War</h3><div class="c5__head"><img class="appicon" src="'+IC+'" alt=""><div><span class="mono dim">Live on Google Play \u00b7 100K+ installs \u00b7 Role Playing</span></div></div>';
+h+='<div class="c5__chips"><span>Google Play</span><span>Game</span></div><p class="c5__d">The game arrived with about 1K installs and now sits at 100K+. In the Play Console, store listing visitors rose from a 28-day average of 309 to 803, and daily acquisitions from 60.3 to 153.</p>';
+h+='<div class="cd__big"><div><b>100\u00d7</b><span>Total installs, 1K+ to 100K+</span></div><div><b>2.6\u00d7</b><span>Daily store visitors</span></div><div><b>2.5\u00d7</b><span>Daily acquisitions</span></div></div>';
+var M=[["Total installs","<s>1K+</s><i>\u2192</i><b>100K+</b>"],["Daily visitors \u00b7 avg to peak","<s>309</s><i>\u2192</i><b>803</b>"],["Daily acquisitions \u00b7 avg to peak","<s>60.3</s><i>\u2192</i><b>153</b>"]];
+h+='<div class="c5__stats cd__stats">'+M.map(function(c){return '<div class="c5__card"><h4>'+c[0]+'</h4><div class="c5__v">'+c[1]+'</div></div>';}).join("")+'</div>';
+h+='<div class="c5__grid">'+F.map(function(f){return '<figure class="c5__fig"><img src="'+f[0]+'" alt="'+f[1]+'" loading="lazy" onerror="this.closest(\'figure\').style.display=\'none\'"><figcaption><b>'+f[1]+'</b>'+f[2]+'</figcaption></figure>';}).join("")+'</div>';return h;}
+function open(){host.innerHTML=render();host.classList.add("on");var y=host.getBoundingClientRect().top+window.scrollY-90;if(window.__lenis)window.__lenis.scrollTo(y);else window.scrollTo({top:y,behavior:"smooth"});}
+window.addEventListener("click",function(e){var w=e.target.closest&&e.target.closest(".wr[data-g]");if(w){e.preventDefault();e.stopImmediatePropagation();open();}},true);
+window.addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")return;var w=e.target.closest&&e.target.closest(".wr[data-g]");if(w){e.preventDefault();e.stopImmediatePropagation();open();}},true);
+pass();new MutationObserver(pass).observe(wall,{childList:true});
+new MutationObserver(function(){var h=host.querySelector(".c5__head");if(h)badge(h.querySelector("img"),/iOS/.test(h.textContent)?"ios":"play");}).observe(host,{childList:true});
+})();
