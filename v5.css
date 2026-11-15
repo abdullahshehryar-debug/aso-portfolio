@@ -173,3 +173,6 @@ h2.display:not(.contact__title) .accent,.hero h1 .accent{font-family:"Instrument
 .i2__ln>span{display:block;transform:translateY(110%)}
 .i2__tag em{font:italic 400 1.14em "Instrument Serif",serif;text-transform:none;letter-spacing:0;color:#b9ff3c}
 @media(max-width:700px){.i2__big{right:50%;transform:translateX(50%);bottom:4vh;text-align:center}.i2__big b{font-size:clamp(72px,26vw,150px)}.i2__row{height:54px}}
+
+/* v5.13b no seam */
+.i2__c--t,.i2__c--b{border:0!important}
