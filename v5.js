@@ -135,3 +135,27 @@ window.addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")re
 pass();new MutationObserver(pass).observe(wall,{childList:true});
 new MutationObserver(function(){var h=host.querySelector(".c5__head");if(h)badge(h.querySelector("img"),/iOS/.test(h.textContent)?"ios":"play");}).observe(host,{childList:true});
 })();
+
+/* v5.12 generic case adder + bus game */
+(function(){var wall=document.getElementById("wall"),host=document.getElementById("caseDetail");if(!wall||!host)return;
+var reg={};
+function wm(l,a,b,w){return '<div class="wm"><p class="wm__l">'+l+'</p><div class="wm__v"><s>'+a+'</s><i>\u2192</i><b>'+b+'</b></div><div class="wm__track"><i class="b1" data-w="100" style="width:100%"></i><i class="b0" data-w="'+w+'" style="width:'+w+'%"></i></div></div>';}
+function render(c){var h='<div class="cd__bar"><span class="mono dim">Case study</span><button class="cd__x" type="button">Close \u2715</button></div>';
+h+='<h3 class="display cd__t">'+c.name+'</h3><div class="c5__head"><img class="appicon" src="'+c.icon+'" alt=""><div><span class="mono dim">'+c.head+'</span></div></div>';
+h+='<div class="c5__chips">'+c.chips.map(function(x){return "<span>"+x+"</span>";}).join("")+'</div><p class="c5__d">'+c.sum+'</p>';
+h+='<div class="cd__big">'+c.bigs.map(function(b){return "<div><b>"+b[0]+"</b><span>"+b[1]+"</span></div>";}).join("")+'</div>';
+h+='<div class="c5__stats cd__stats">'+c.cards.map(function(x){return '<div class="c5__card"><h4>'+x[0]+'</h4><div class="c5__v">'+x[1]+'</div></div>';}).join("")+'</div>';
+h+='<div class="c5__grid">'+c.figs.map(function(f){return '<figure class="c5__fig"><img src="'+f[0]+'" alt="'+f[1]+'" loading="lazy" onerror="this.closest(\'figure\').style.display=\'none\'"><figcaption><b>'+f[1]+'</b>'+f[2]+'</figcaption></figure>';}).join("")+'</div>';return h;}
+function open(k){var c=reg[k];if(!c)return;host.innerHTML=render(c);host.classList.add("on");var y=host.getBoundingClientRect().top+window.scrollY-90;if(window.__lenis)window.__lenis.scrollTo(y);else window.scrollTo({top:y,behavior:"smooth"});}
+function add(c){reg[c.id]=c;var n=wall.querySelectorAll(".wr").length;var r=document.createElement("div");r.className="wr";r.setAttribute("role","button");r.tabIndex=0;r.setAttribute("data-case",c.id);r.setAttribute("data-i",String(n));r.setAttribute("aria-label","Open the "+c.name+" case study");r.style.setProperty("--ac",c.ac);
+r.innerHTML='<div class="wr__app"><img class="appicon" src="'+c.icon+'" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div><b>'+c.name+'</b><span>'+c.rowSub+'</span></div></div>'+wm(c.m[0][0],c.m[0][1],c.m[0][2],c.m[0][3])+wm(c.m[1][0],c.m[1][1],c.m[1][2],c.m[1][3])+'<div class="wr__x">'+c.big[0]+'<small>'+c.big[1]+'</small><em>Open case study \u2192</em></div>';wall.appendChild(r);}
+window.addEventListener("click",function(e){var w=e.target.closest&&e.target.closest(".wr[data-case]");if(w){e.preventDefault();e.stopImmediatePropagation();open(w.getAttribute("data-case"));}},true);
+window.addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")return;var w=e.target.closest&&e.target.closest(".wr[data-case]");if(w){e.preventDefault();e.stopImmediatePropagation();open(w.getAttribute("data-case"));}},true);
+add({id:"bus",name:"Ultimate Bus Driver Simulator",icon:"https://play-lh.googleusercontent.com/cFIKlk9hhZguXveHu6OcAl0imKQk1bHh2jB045FglJ4qX3aZR4vV7NDL7GbfclSIGIhUx4NeQzt7DHnj7Cqi2KA=w128-h128-rw",ac:"#ff8f4a",rowSub:"Games \u00b7 Simulation",
+m:[["Daily visitors \u00b7 avg to peak","84","226","37.2"],["Daily installs \u00b7 avg to peak","8.36","31","27"]],big:["3.7\u00d7","Daily installs"],
+head:"Live on Google Play \u00b7 50K+ installs \u00b7 Simulation",chips:["Google Play","Game","50K+ installs"],
+sum:"In the Play Console, daily store visitors rose from a 28-day average of 84 to 226, and daily installs from 8.36 to 31, while monthly active users kept climbing.",
+bigs:[["3.7\u00d7","Daily installs"],["2.7\u00d7","Daily store visitors"]],
+cards:[["Daily visitors \u00b7 avg to peak","<s>84</s><i>\u2192</i><b>226</b>"],["Daily installs \u00b7 avg to peak","<s>8.36</s><i>\u2192</i><b>31</b>"],["Monthly active users \u00b7 28-day avg to Jun 25","<s>170</s><i>\u2192</i><b>197</b>"]],
+figs:[["bus-kpis.jpg","Play Console KPIs \u00b7 Jun 5 to Jul 4, 2025","Monthly active users climb from a 28-day average of 170 to 197, and store listing visitors from 84 to 226."],["bus-visitors.jpg","Store listing visitors \u00b7 daily","Daily visitors sit between 50 and 120 through June, then reach 226 on Jul 4 against a 28-day rolling average of 84.0."],["bus-acquisitions.jpg","Store listing acquisitions \u00b7 daily","Daily acquisitions hold under 13 for most of the month, then jump to 31 on Jul 4 against a 28-day rolling average of 8.36."]]});
+})();
