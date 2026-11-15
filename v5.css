@@ -131,3 +131,10 @@ h2.display:not(.contact__title) .accent,.hero h1 .accent{font-family:"Instrument
 
 /* v5.9 ios case */
 .c5__v em{font-style:normal;color:#4dff9a;font-size:.45em;font-weight:700;margin-left:6px}
+
+/* v5.11 store badges */
+.ico{position:relative;display:inline-block;flex:none;line-height:0}
+.ico .appicon{display:block}
+.sb{position:absolute;right:-6px;bottom:-6px;width:22px;height:22px;border-radius:50%;background:#0b0e0d;border:2px solid #07090a;display:grid;place-items:center;font-style:normal;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+.sb svg{width:12px;height:12px;display:block}
+.sb--ios svg{fill:#fff}
