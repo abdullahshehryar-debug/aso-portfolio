@@ -81,3 +81,24 @@ function go(){var cards=rail.children;if(!cards.length)return;var w=cards[0].get
 var a=rail.innerHTML,m=document.createElement("div");m.className="rev-marq";m.innerHTML=a+a;m.style.setProperty("--cw",w+"px");m.style.animationDuration=Math.max(60,(cards.length*(w+18))/30)+"s";rail.style.display="none";tr.appendChild(m);}
 setTimeout(go,300);
 })();
+
+/* v5.9 iOS case: AI Artist */
+(function(){var wall=document.getElementById("wall"),host=document.getElementById("caseDetail");if(!wall||!host)return;
+var IC="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/9c/d6/2f9cd65c-10b5-297f-e1ec-fffc0bdc0caf/Placeholder.mill/200x200Icon.ApSiOS01-75.jpg";
+var n=wall.querySelectorAll(".wr").length;
+var r=document.createElement("div");r.className="wr";r.setAttribute("role","button");r.tabIndex=0;r.setAttribute("data-x","1");r.setAttribute("data-i",String(n));r.setAttribute("aria-label","Open the AI Artist case study");r.style.setProperty("--ac","#ff5c9e");
+r.innerHTML='<div class="wr__app"><img class="appicon" src="'+IC+'" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"><div><b>AI Artist: Image to Video AI</b><span>Photo &amp; Video \u00b7 iOS App Store</span></div></div><div class="wm"><p class="wm__l">Monthly proceeds \u00b7 30 days</p><div class="wm__v"><s>$30</s><i>\u2192</i><b>$286</b></div><div class="wm__track"><i class="b1" data-w="100" style="width:100%"></i><i class="b0" data-w="10.5" style="width:10.5%"></i></div></div><div class="wm"><p class="wm__l">Total downloads \u00b7 30 days</p><div class="wm__v"><s>~106</s><i>\u2192</i><b>226</b></div><div class="wm__track"><i class="b1" data-w="100" style="width:100%"></i><i class="b0" data-w="46.9" style="width:46.9%"></i></div></div><div class="wr__x">9.5\u00d7<small>Monthly proceeds</small><em>Open case study \u2192</em></div>';
+wall.appendChild(r);
+var F=[["ios-proceeds-before.jpg","Proceeds before ASO \u00b7 Jun 8 to Jul 7","$30 for the whole 30 days, with the line sitting near zero."],["ios-proceeds-after.jpg","Proceeds after ASO \u00b7 Jul 8 to Aug 6","$286 over the next 30 days, with repeated spikes above $40."],["ios-overview.jpg","App Store Connect \u00b7 page views, conversion, downloads","Product page views 632 (+39%), conversion rate 1.64% (+105%) and total downloads 226 (+113%) versus the previous period."],["ios-downloads.jpg","Total downloads \u00b7 Jun 22 to Jul 21","Daily downloads stay in single digits, then climb to 28, 32 and 40 on Jul 19, 20 and 21."],["ios-impressions.jpg","Impressions \u00b7 Jun 22 to Jul 21","17,206 impressions in the period, lifting from about 600 a day to about 1,000."]];
+function render(){var h='<div class="cd__bar"><span class="mono dim">Case study</span><button class="cd__x" type="button">Close \u2715</button></div>';
+h+='<h3 class="display cd__t">AI Artist: Image to Video AI</h3><div class="c5__head"><img class="appicon" src="'+IC+'" alt=""><div><span class="mono dim">Live on the iOS App Store \u00b7 Photo &amp; Video</span></div></div>';
+h+='<div class="c5__chips"><span>iOS App Store</span><span>30-day comparison</span></div><p class="c5__d">After ASO, monthly proceeds went from $30 (Jun 8 to Jul 7) to $286 (Jul 8 to Aug 6), while product page views, conversion rate and downloads all rose in App Store Connect.</p>';
+h+='<div class="cd__big"><div><b>9.5\u00d7</b><span>Monthly proceeds, $30 to $286</span></div><div><b>+113%</b><span>Total downloads vs previous period</span></div></div>';
+var M=[["Monthly proceeds","<s>$30</s><i>\u2192</i><b>$286</b>"],["Total downloads \u00b7 30 days","<b>226</b><em>+113%</em>"],["Conversion rate \u00b7 daily avg","<b>1.64%</b><em>+105%</em>"],["Product page views","<b>632</b><em>+39%</em>"]];
+h+='<div class="c5__stats cd__stats">'+M.map(function(c){return '<div class="c5__card"><h4>'+c[0]+'</h4><div class="c5__v">'+c[1]+'</div></div>';}).join("")+'</div>';
+h+='<div class="c5__grid">'+F.map(function(f){return '<figure class="c5__fig"><img src="'+f[0]+'" alt="'+f[1]+'" loading="lazy" onerror="this.closest(\'figure\').style.display=\'none\'"><figcaption><b>'+f[1]+'</b>'+f[2]+'</figcaption></figure>';}).join("")+'</div>';
+h+='<p class="c5__d">Daily downloads moved from single digits to 40 by Jul 21, and impressions rose from roughly 600 a day to about 1,000 in the same stretch.</p>';return h;}
+function open(){host.innerHTML=render();host.classList.add("on");var y=host.getBoundingClientRect().top+window.scrollY-90;if(window.__lenis)window.__lenis.scrollTo(y);else window.scrollTo({top:y,behavior:"smooth"});}
+window.addEventListener("click",function(e){var w=e.target.closest&&e.target.closest(".wr[data-x]");if(w){e.preventDefault();e.stopImmediatePropagation();open();}},true);
+window.addEventListener("keydown",function(e){if(e.key!=="Enter"&&e.key!==" ")return;var w=e.target.closest&&e.target.closest(".wr[data-x]");if(w){e.preventDefault();e.stopImmediatePropagation();open();}},true);
+})();
